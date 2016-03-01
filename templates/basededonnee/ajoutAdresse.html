@@ -1,0 +1,14 @@
+{% if envoi %}Votre message a bien été envoyé !{% endif %}
+
+Exemple : Maison, 55 rue du Faubourg-Saint-Honoré, 75000, Paris
+<form action="{% url "basededonnee.views.ajoutAdresse" %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer" />
+    
+
+</form>
+
+<form action="/home/adresse/">
+    <input type="submit" value="Retour">
+</form>

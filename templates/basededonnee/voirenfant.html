@@ -1,0 +1,52 @@
+{{username}}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Modifier les informations" />
+
+</form>
+
+
+<form action="/home/enfant/{{ida}}/des/">
+    <input type="submit" value="Supprimer Enfant">
+</form>
+<br/>
+{{ Ecole }}
+<form action="/home/enfant/{{ida}}/Ecole/">
+    <input type="submit" value="Modifier l'école">
+</form>
+Lundi <br/>
+{{EDT.L}}
+<form action="/home/enfant/{{ida}}/L/">
+    <input type="submit" value="modifier Lundi">
+</form>
+Mardi <br/>
+{{EDT.M}}
+<form action="/home/enfant/{{ida}}/M">
+    <input type="submit" value="modifier Mardi">
+</form>
+Mercredi <br/>
+{{EDT.D}}
+<form action="/home/enfant/{{ida}}/D">
+    <input type="submit" value="modifier Mercredi">
+</form>
+Jeudi <br/>
+{{EDT.J}}  
+<form action="/home/enfant/{{ida}}/J">
+    <input type="submit" value="modifier Jeudi">
+</form>
+Vendredi <br/>
+{{EDT.V}}  
+<form action="/home/enfant/{{ida}}/V">
+    <input type="submit" value="modifier Vendredi">
+</form>
+Samedi <br/>
+{{EDT.S}} 
+<form action="/home/enfant/{{ida}}/S">
+    <input type="submit" value="modifier Samedi">
+</form>
+
+
+<form action="/home/enfant">
+    <input type="submit" value="retour">
+</form>

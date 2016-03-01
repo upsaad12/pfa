@@ -1,0 +1,14 @@
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{Jour}}
+  <br/>
+  
+  {{ form.as_table }}
+  <br/>
+    <input type="submit" value="Modifier" />
+
+</form>
+
+<form action="/home/enfant/{{ida}}">
+    <input type="submit" value="retour">
+</form>

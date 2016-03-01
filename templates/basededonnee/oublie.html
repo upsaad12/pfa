@@ -1,0 +1,42 @@
+<h1>Identifiants oubliés</h1>
+
+{% if gg %}
+</br>
+Un email a été envoyé à l'adresse correspondante.
+</br>
+{% else %}
+Veuillez remplir au moins un champ.
+
+{% if rate == 1%}
+</br>
+Pas d'utilisateur trouvé.
+</br>
+{% endif %}
+{% if rate == 2%}
+</br>
+Mauvaise combinaison utilisateur-adresse email.
+</br>
+{% endif %}
+{% if rate == 3%}
+</br>
+Plusieurs utilisateurs avec la même adresse email, veuillez préciser le nom d'utilisateur.
+</br>
+{% endif %}
+{% if rate == 4%}
+</br>
+Pour modifier le mot de passe d'un compte enfant, connectez vous sur le compte parent associé, allez dans l'onglet 'enfant', sélectionnez le compte enfant à modifier. Enfin, tapez le nouveau mot de passe dans les 2 champs et le mot de passe du compte parent dans le champ associé.
+</br>
+{% endif %}
+
+
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer" />
+</form>
+
+{% endif %}
+
+<form action="/home/connexion">
+    <input type="submit" value="Retour">
+</form>

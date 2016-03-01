@@ -1,0 +1,24 @@
+{% block content %}
+             
+<h2>Liste des disponibilités</h2>
+<ul>
+  {% for n in liste %}
+  <li>{{ n}}</li>
+   <form action="/home/{{n.id}}/des">
+    <input type="submit" value="Supprimer">
+  </form>
+
+  {% endfor %}
+</ul>
+{% endblock %}
+
+<form action="/home/ajoutDispo">
+    <input type="submit" value="Ajouter disponibilité">
+</form>
+
+
+<form action="/home/">
+    <input type="submit" value="Retour">
+</form>
+
+

@@ -1,0 +1,14 @@
+{% if envoi %}Votre message a bien été envoyé !{% endif %}
+
+
+format horaire : HH:MM
+<form action="{% url "basededonnee.views.ajoutDisponibilite" %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer" />
+    
+</form>
+
+<form action="/home/dispo">
+    <input type="submit" value="retour">
+</form>

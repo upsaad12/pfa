@@ -1,0 +1,12 @@
+{{username}}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Modifier" />
+</form>
+
+<form action="/home/">
+    <input type="submit" value="retour">
+</form>

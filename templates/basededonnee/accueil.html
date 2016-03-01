@@ -1,0 +1,65 @@
+ <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAPJisxbzkTdIRAenenCZgC7LOm-yDKyEg" type="text/javascript"></script>
+
+
+ 
+Bonjour sur l'accueil
+
+
+{% if user.is_authenticated %}
+Vous êtes connecté, {{ user.username }} ! <br/>
+
+
+<form action="/home/deconnexion">
+    <input type="submit" value="se déconnecter">
+</form>
+
+
+
+{% if isParent %}
+ Vous etes un parent <br/>
+
+<img src ={{ photo.url }} />
+Que voulez vous faire ?
+
+<form action="/home/adresse">
+    <input type="submit" value="Adresse">
+</form>
+
+<form action="/home/dispo">
+    <input type="submit" value="Disponibilité">
+</form>
+
+<form action="/home/enfant">
+    <input type="submit" value="Enfant">
+</form>
+
+<form action="/home/covoiturage">
+    <input type="submit" value="Voir covoiturage">
+</form>
+
+<form action="/home/modifier">
+    <input type="submit" value="Modifier infos persos">
+</form>
+
+{% else %}
+Vous etes un enfant <br/>
+
+<form action="/home/covoiturage">
+    <input type="submit" value="Voir covoiturage">
+</form>
+
+{% endif %}
+
+{% else %}
+<br/>
+Connectez vous ou inscrivez vous
+<br/>
+<form action="/home/connexion">
+    <input type="submit" value="connexion">
+</form>
+
+<form action="/home/inscription">
+    <input type="submit" value="S'incrire">
+</form>
+
+{% endif %}

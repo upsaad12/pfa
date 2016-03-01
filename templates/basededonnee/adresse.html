@@ -1,0 +1,30 @@
+{% block content %}
+             
+<h2>Liste des adresses</h2>
+<ul>
+  {% for n in liste %}
+  <li><form action="/home/voiradresse/{{n.id}}">
+    <input type="submit" value={{ n }}>
+</form></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+<form action="/home/ajoutAdresse/">
+    <input type="submit" value="Ajouter adresse">
+</form>
+
+
+<form action="/home/">
+    <input type="submit" value="Retour">
+</form>
+
+<br/>
+<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Modifier" />
+    
+</form>
+<br/>

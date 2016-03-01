@@ -1,0 +1,14 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Modifier les informations" />
+</form>
+
+
+<form action="/home/enfant/{{ida}}/ajouterEcole/">
+    <input type="submit" value="Ajouter Ecole">
+</form>
+
+<form action="/home/enfant/{{ida}}/">
+    <input type="submit" value="Retour">
+</form>
